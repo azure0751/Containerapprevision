@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: tinkushuklaregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_61f138de98d9405190e541e0189f2642 }}/conatinerapprevision:${{ github.sha }}
-        file: ./Dockerfile
+        file: ConatinerAppRevision/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
