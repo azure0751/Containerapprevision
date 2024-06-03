@@ -9,6 +9,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  PROJECT_PATH: ContainerAppRevision
+  ZIP_PATH: WpfApp6/bin/Release/net5.0-windows/win-x86/publish/WpfApp6-Portable.zip
+  EXE_PATH: WpfApp6/bin/Release/net5.0-windows/win-x86/publish/WpfApp6.exe
 jobs:
   build:
 
@@ -26,3 +30,5 @@ jobs:
       run: dotnet build --no-restore --configuration Release
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Publish Project
+      run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained -r win-x86 -p:PublishSingleFile=true --no-restore
