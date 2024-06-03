@@ -30,5 +30,7 @@ jobs:
       run: dotnet build --no-restore --configuration Release
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Publish Project
-      run: dotnet publish ${{ env.PROJECT_PATH }} -c Release --self-contained  -p:PublishSingleFile=true --no-restore
+    - name: Release Publish
+      run: dotnet publish -c Release -o ./publish
+    - name: Create Zip File from publish
+      run: zip -r deploy.zip ./publish
