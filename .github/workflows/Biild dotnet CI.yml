@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 env:
-  PROJECT_PATH: ContainerAppRevision
+  PROJECT_PATH: Containerapprevision/ConatinerAppRevision/ConatinerAppRevision.csproj
   ZIP_PATH: WpfApp6/bin/Release/net5.0-windows/win-x86/publish/WpfApp6-Portable.zip
   EXE_PATH: WpfApp6/bin/Release/net5.0-windows/win-x86/publish/WpfApp6.exe
 jobs:
