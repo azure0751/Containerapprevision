@@ -34,4 +34,9 @@ jobs:
       run: dotnet publish -c Release -o ./publish
     - name: Create Zip File from publish
       run: zip -r deploy.zip ./publish
+    - name: Upload Release
+      uses: ncipollo/release-action@v1.12.0
+      with:
+        artifacts: "./publish/deploy.zip"
+        token: ${{ secrets.GITHUB_TOKEN }}
     
